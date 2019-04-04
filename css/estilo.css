@@ -1,0 +1,277 @@
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Calibri, sans-serif;
+}
+ 
+/*Agregamos margenes inferiores a los parrafos*/
+p {
+  margin: 10px 0px;
+  font-size: 20px;
+  text-align: justify;
+  width: 90%;
+}
+
+header {
+  background: #b91817;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  float: left; /* Desplazamos el nav hacia la izquierda */
+}
+ 
+nav ul {
+  list-style: none;
+  overflow: hidden; /* Limpiamos errores de float */
+}
+ 
+nav ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+ 
+nav ul li a {
+  display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+ 
+nav ul li:hover {
+  background: #981914;
+}
+
+hr {
+	margin:40px 25px;
+}
+
+img {
+	margin: 20px auto;
+}
+
+body {
+	background-color: #e8e8e7;
+}
+
+h1 {
+	color: #b91817;
+	font-size: 70px;
+	padding-top: 80px;
+}
+
+h2 {
+	color: #b91817;
+	font-size: 50px;	
+	text-align: center;
+}
+
+textarea {
+	width: 350px;
+	height: 100px;
+	position: relative;
+	bottom: 15px;
+}
+
+form {
+	padding: 30px 0 40px 80px;
+}
+
+input {
+	width: 350px;
+	height: 20px;
+	margin-top: 3px;
+	margin-bottom: 15px;
+}
+
+.listaServicios {
+	text-align: justify;
+	 font-size: 20px;
+	 padding: 20px 0;
+}
+
+.elementosLista {
+	padding: 5px 0;
+}
+
+.contenido {
+  color: #333333;
+  background-color: #f6f5f5;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  overflow:hidden;
+}
+
+.centradoServicios {
+	text-align: center;
+	padding-bottom: 700px;
+}
+
+.centradoContacto {
+	margin-top: 60px;
+}
+
+.parrafoPrincipal {
+	position: relative;
+	left: 50px;
+}
+
+.caja {
+	width:100%;
+}
+
+.parte1 {
+	width:500px;
+	float:left;
+}
+
+.parte2 {
+	width:400px; 
+	float:right;
+}
+
+.parte3 {
+	width:400px;
+	float:left;
+	margin-left: 100px;
+}
+
+.parte4 {
+	width:500px; 
+	float:right;
+}
+
+.parte5 {
+	width:500px;
+	float:left;
+}
+
+.parte6 {
+	width:500px; 
+	float:right;
+}
+
+.boton {
+	position: relative;
+	left: 75px;
+	width: 100px;
+	height: 30px;
+}
+
+.boton2 {
+	position: relative;
+	left: 90px;
+	top: 10px;
+	width: 150px;
+	height: 30px;
+}
+
+.boton3 {
+	width: 100px;
+	height: 25px;
+}
+
+.parrafoContacto {
+	padding-top: 30px;
+}
+
+.formBuscador {
+	padding: 0;
+	position: relative;
+	top:12px;
+	left: 488px;
+}
+
+.formBuscadorESP {
+	padding: 0;
+	position: relative;
+	top:12px;
+	left: 485px;
+}
+
+.listaMenu {
+	width: 100%;
+}
+
+.inputBuscador {
+	height: 20px;
+	width: 250px;
+}
+
+#inicio {
+	text-align: center;
+}
+
+.imagenPrincipal {
+	position: relative;
+	left: 400px;
+}
+
+.obligatorio {
+	font-size: 12px;
+}
+
+.buscador:hover{
+	background-color: transparent;
+}
+
+.idioma:hover{
+	background-color: transparent;
+}
+
+.idiomaESP:hover{
+	background-color: transparent;
+}
+
+.idioma {
+	color: #fff;
+	padding: 0;
+	position: relative;
+	bottom: 6px;
+	left: 536px;
+}
+
+.idiomaESP {
+	color: #fff;
+	padding: 0;
+	position: relative;
+	bottom: 6px;
+	left: 533px;
+}
+
+.idioma p {
+	font-size: 15px;
+	padding: 0;
+}
+
+.idiomaESP p {
+	font-size: 15px;
+	padding: 0;
+}
+
+.idioma select {
+	position: relative;
+	bottom: 5px;
+}
+
+.idiomaESP select {
+	position: relative;
+	bottom: 5px;
+}
+
+.form1 {
+	padding: 0;
+}
+
+.lineaMovida {
+	position: relative;
+	top: 30px;
+	width: 1030px;
+}
