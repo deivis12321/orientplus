@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Orient Plus</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Deivis Andrés Cervantes Puello">
+	<meta name="description" content="Sitio web para la prueba de la empresa Supermundo web. " />
+    <meta name="keywords" content="Relojería, Empresa, Servicios, Accesibilidad, Contacto" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	<script>
+	function abreSitio(){
+	var URL = "http://";
+	var web = document.form1.idioma.options[document.form1.idioma.selectedIndex].value;
+	window.open(web, '_self', '');
+	}
+	</script>
+  </head>
+  <body>
+  	<header>    <!--Barra de menú que sirve como mapa del sitio, ya que las opciones llevan a los títulos que dicen-->
+		<nav class="listaMenu">
+			<ul>
+				<li><a href="#inicio" title="Ir a la sección principal" tabindex="1">Inicio</a></li>
+				<li><a href="#servicios" title="Ir a la sección de servicios" tabindex="2">Servicios</a></li>
+				<li><a href="#comercial" title="Ir a la sección de comercial" tabindex="3">Comercial</a></li>
+				<li><a href="#contacto" title="Ir a la sección de contacto" tabindex="4">Contacto</a></li>
+				<li class="buscador">
+					<FORM method=GET action="http://www.google.com/search" class="formBuscadorESP">
+						<TABLE>
+							<tr>
+								<td>
+									<input TYPE=text name=q size=31 maxlength=255 value="" class="inputBuscador" title="Buscar en la página" tabindex="5" accesskey="b">
+									<input type=submit VALUE="Buscar" class="boton3" tabindex="6">
+									<input type=radio name=sitesearch value="orientplus.000webhostapp.com" style="display: none;" checked>
+								</td>
+							</tr>
+						</TABLE>
+					</FORM>
+				</li>
+				<li class="idiomaESP">
+					<p>Idioma:</p>
+					<form name="form1" class="form1" target="_self">
+						<select tabindex="7" title="Menú desplegable para seleccionar idioma" name="idioma" onChange="javascript:abreSitio()">
+							<option selected>--Elegir--</option>
+							<option value="index.html">Español</option>
+							<option value="index_ing.html">Inglés</option>
+						</select>
+					</form>
+				</li>
+			</ul> 
+		</nav>
+	</header>
+	<section class="contenido wrapper">
+		<h1 id="inicio" accesskey="i" tabindex="8">Relojería Orient Plus</h1>
+		<img src="img/relojes.jpg" alt="Imagen de cuatro relojes" class="imagenPrincipal" tabindex="9" />
+		<p class="parrafoPrincipal" tabindex="10">Somos una empresa dedicada a la <strong>venta y reparación de relojes</strong>, con más de 30 años prestando el mejor servicio y la mejor calidad para que nuestros usuarios se sientan satisfechos y motivados a volver con nosotros. <em>Tenemos los técnicos más calificados</em> para que su reloj, que tanto adora, quedé funcionando como nuevo, y aún mejor, puede pedir una restauración para que quitarle un par de años a su reloj. <em>Estamos contentos de tenerlo en nuestro sitio web</em>, está un poco más cerca del mejor servicio de relojería de la costa caribe. Venga a nuestro establecimiento para tener el gusto de atenderlo, ¡estamos a su servicio, bienvenido!</p>
+		<hr />
+		<section class="centradoServicios">
+			<h2 id="servicios" accesskey="s" tabindex="11">Nuestros servicios</h2>
+			<p class="parrafoPrincipal" tabindex="12">Los servicios que te ofrecemos son los siguientes:</p>
+			<div class="caja">
+				<div class="parte1">
+					<img src="img/larga.jpg" alt="Imagen de alguien reparando un reloj" width="411" height="320" tabindex="13" />
+				</div>
+				<div class="parte2">
+					<ul title="Lista de servicios 1 de 2" class="listaServicios" tabindex="14">
+						<li class="elementosLista">Cambio de Batería</li>
+						<li class="elementosLista">Mantenimiento de Máquina</li>
+						<li class="elementosLista">Cambio de Talco</li>
+						<li class="elementosLista">Cambio de Manilla</li>
+						<li class="elementosLista">Intercambio de Piezas entre relojes</li>
+						<li class="elementosLista">Cambio de Broche</li>
+						<li class="elementosLista">Cauchitos para Manilla</li>
+						<li class="elementosLista">Cambio de Pasadores</li>
+						<li class="elementosLista">Postura de Tija o Coronilla</li>
+						<li class="elementosLista">Maquinas para Relojes de pared</li>
+					</ul>
+				</div>
+			</div> 
+			<div class="caja">
+				<div class="parte3">
+					<ul title="Lista de servicios 2 de 2" class="listaServicios" tabindex="15">
+						<li class="elementosLista">Venta de relojes de marca</li>
+						<li class="elementosLista">Venta de teléfonos celulares</li>
+						<li class="elementosLista">Venta de accesorios para celular</li>
+						<li class="elementosLista">Venta de articulos variados</li>
+						<li class="elementosLista">Servicio de minutos</li>
+						<li class="elementosLista">Servicio de paquetes de datos</li>
+						<li class="elementosLista">¡Y mucho más!</li>
+					</ul>
+				</div>
+				<div class="parte4">
+					<img src="img/otros.jpg" alt="Imagen con relojes y celulares" width="411" height="320" tabindex="16" />
+				</div>
+			</div>
+		</section>
+		<br/>
+		<hr />
+		<section class="centradoComercial">
+			<h2 id="comercial"  tabindex="17">Comercial</h2>
+			<div class="caja">
+				<div class="parte5" title="Orient Plus en Youtube">
+					<iframe  width="560" height="315" src="https://www.youtube.com/embed/KsLnO5QWqTE?start=3" style="margin-top: 20px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen tabindex="18"></iframe>
+				</div>
+				<div class="parte6">
+					<p class="parrafoContacto" tabindex="19" title="Lectura del video">"Usted ya nos conoce, en la relojería Orient, Esquina de la calle las flores, en la plaza principal, y ahora, Henry Cervantes, experto profesional en reparación de celulares y relojes, abre su nuevo centro de atención: Donde Henry. En la calle Ramón Herrera, sector plaza principal, con la más avanzada tecnología te ofrece: Reparación garantizada de celulares, accesorios, sim-card, equipos con tecnología de punta. Donde Henry: Verdaderos profesionales al servicio de tu equipo celular"</p>
+				</div>
+			</div>
+		</section>
+		<hr class="lineaMovida" />
+		<section class="centradoContacto">
+			<h2 id="contacto" accesskey="c" tabindex="20">¡Contáctanos!</h2>
+			<div class="caja">
+				<div class="parte5">
+					<form>
+						<p class="obligatorio" tabindex="21">Los campos <em>obligatorios</em> en el formulario acontinuación están marcados con <strong>(*)</strong>:</p>
+						<label for="nombre">Nombre (*): </label><br />
+						<input type="text" id="nombre" accesskey="n" tabindex="22" required /><br />
+						<label for="email">Email (*): </label><br />
+						<input type="email" id="email" accesskey="e" required  tabindex="23" /><br />
+						<label for="telefono">Teléfono: </label><br />
+						<input type="text" id="telefono" accesskey="t" tabindex="24" /><br />
+						<label for="mensaje">Mensaje (*):</label><br /><br />
+						<textarea id="mensaje" tabindex="25" accesskey="m" required=""></textarea>
+						<input type="submit"  class="boton" value="Enviar" title="Botón para enviar el formulario" tabindex="26" />
+						<input type="reset" class="boton" value="Reset" title="Botón para resetear la información del formulario" tabindex="27" />
+					</form>
+				</div>
+				<div class="parte6">
+					<p class="parrafoContacto" tabindex="28">También puedes ponerte en contacto con nosotros através de nuestro facebook corporativo, así como por nuestro correo electrónico. ¡Gracias por tu visita y espero verte pronto!</p>
+
+		            <div>
+		                <button title="Mandar un e-mail a la empresa" onclick="window.location.href = 'mailto:orientplus@gmail.com';" accesskey="c" class="boton2" tabindex="29">Correo electrónico</button>
+		               	<button title="Facebook personal de la empresa" onclick="window.location.href = 'https://www.facebook.com/Taller-OrientPlus-2079293448948890/';" class="boton2" tabindex="30">Facebook</button>
+		            </div>
+				</div>
+			</div>
+		</section>
+	</section>
+  </body>
+</html>
