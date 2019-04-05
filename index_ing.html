@@ -14,13 +14,51 @@
 	var web = document.form1.idioma.options[document.form1.idioma.selectedIndex].value;
 	window.open(web, '_self', '');
 	}
+
+	function verificar(){
+		
+		if(document.form2.nombre.value && document.form2.email.value && document.form2.mensaje.value){
+			opcion = confirm('Are you sure you want to send the form data?');
+			condicion = false;
+			if(opcion == true){
+				correo = document.getElementById('email').value.split("");
+				for(var i=0; i < correo.length; i++){
+					if(correo[i] == "@"){
+						condicion = true
+					}
+				}
+				if(condicion == false){
+					document.getElementById('email').focus();
+					return alert('You have not added the e-mail correctly. The format is:\nprimeraparte@segundaparte.com');
+				} else if(condicion == true){
+					alert('The form has been sent correctly.');
+					document.getElementById("form2").submit();
+				}
+			} else {
+				alert('The form has not been sent, you can verify the information.');
+				return false;
+			}
+		} else {
+			if(document.form2.nombre.value == false){
+				document.getElementById('nombre').focus();
+				return alert('You have not filled in all the required fields.');
+			} else if(document.form2.email.value == false){
+				document.getElementById('email').focus();
+				return alert('You have not filled in all the required fields.');
+			} else if(document.form2.mensaje.value == false){
+				document.getElementById('mensaje').focus();
+				return alert('You have not filled in all the required fields.');
+			}
+
+		}
+	}
 	</script>
   </head>
   <body>
   	<header>    <!--Barra de menú que sirve como mapa del sitio, ya que las opciones llevan a los títulos que dicen-->
 		<nav class="listaMenu">
 			<ul>
-				<li><a href="#inicio" title="Go to the introduction section of the company" tabindex="1">Start</a></li>
+				<li><a href="#inicio" title="Go to the introduction section of the company" accesskey="i" tabindex="1">Start</a></li>
 				<li><a href="#servicios" title="Go to the services section" tabindex="2">Services</a></li>
 				<li><a href="#comercial" title="Go to the commercial section" tabindex="3">Commercial</a></li>
 				<li><a href="#contacto" title="Go to the section to communicate with the company" tabindex="4">Contact</a></li>
@@ -38,12 +76,12 @@
 					</FORM>
 				</li>
 				<li class="idioma">
-					<p>Idioma:</p>
+					<p>Language:</p>
 					<form name="form1" class="form1" target="_self">
-						<select title="Drop-down menu to select language" name="idioma" onChange="javascript:abreSitio()" tabindex="7">
-							<option selected>--Elegir--</option>
-							<option value="index.html">Español</option>
-							<option value="index_ing.html">Inglés</option>
+						<select accesskey="l" title="Language drop-down menu, press enter to display the list and locate the desired language with the up and down arrows." name="idioma" onChange="abreSitio()" tabindex="7">
+							<option selected>--Choose--</option>
+							<option title="Press enter to choose" value="index.html">Spanish</option>
+							<option title="Press enter to choose" value="index_ing.html">English</option>
 						</select>
 					</form>
 				</li>
@@ -51,13 +89,12 @@
 		</nav>
 	</header>
 	<section class="contenido wrapper">
-		<h1 id="inicio" accesskey="i" tabindex="8">Orient Plus Watchmaking</h1>
+		<h1 id="inicio" tabindex="8">Orient Plus Watchmaking</h1>
 		<img src="img/relojes.jpg" alt="Image of four watches" class="imagenPrincipal" tabindex="9" />
 		<p class="parrafoPrincipal" tabindex="10">We are a company dedicated to the <strong> sale and repair of watches </strong>, with more than 30 years providing the best service and the best quality so that our users feel satisfied and motivated to return with us. <em> We have the most qualified technicians </em> so that your watch, which you love so much, stayed working like new, and even better, you can ask for a restoration so that you can take a couple of years off your watch. <em> We are happy to have you on our website </em>, it is a little closer to the best watchmaking service on the Caribbean coast. Come to our establishment to have the pleasure of serving you, we are at your service, welcome! </p>
-
 		<hr />
 		<section class="centradoServicios">
-			<h2 id="servicios" accesskey="s" tabindex="11">Our services</h2>
+			<h2 id="servicios" tabindex="11">Our services</h2>
 			<p class="parrafoPrincipal" tabindex="12">The services that we offer you are the following:</p>
 			<div class="caja">
 				<div class="parte1">
@@ -110,29 +147,29 @@
 		</section>
 		<hr class="lineaMovida" />
 		<section class="centradoContacto">
-			<h2 id="contacto" accesskey="c" tabindex="20">¡Contact us!</h2>
+			<h2 id="contacto" tabindex="20">¡Contact us!</h2>
 			<div class="caja">
 				<div class="parte5">
-					<form>
+					<form name="form2" id="form2">
 						<p class="obligatorio" tabindex="21">The <em> required </em> fields in the form below are marked with <strong>(*)</strong>:</p>
 						<label for="nombre">Name (*): </label><br />
-						<input type="text" id="nombre" accesskey="n" tabindex="22" required /><br />
+						<input type="text" id="nombre" name="nombre" accesskey="q" tabindex="22" required placeholder="Fulanito de Tal" /><br />
 						<label for="email">E-mail (*): </label><br />
-						<input type="email" id="email" accesskey="e" required  tabindex="23" /><br />
+						<input type="email" id="email" name="email" accesskey="w" required  tabindex="23" placeholder="micorreo@correo.com" /><br />
 						<label for="telefono">Phone number: </label><br />
-						<input type="text" id="telefono" accesskey="t" tabindex="24" /><br />
+						<input type="text" id="telefono" name="telefono" accesskey="a" tabindex="24" placeholder="+57 311 111 1111" /><br />
 						<label for="mensaje">Message (*):</label><br /><br />
-						<textarea id="mensaje" tabindex="25" accesskey="m" required=""></textarea>
-						<input type="submit"  class="boton" value="Enviar" title="Button to send the form" tabindex="26" />
-						<input type="reset" class="boton" value="Reset" title="Button to reset the form information" tabindex="27" />
+						<textarea id="mensaje" tabindex="25" name="mensaje" accesskey="s" required placeholder="Enter the message here ..."></textarea>
+						<input type="reset" class="boton" accesskey="x" value="Reset" title="Button to reset the form information" tabindex="27" />
 					</form>
+					<button class="boton4" onclick="verificar();" accesskey="z" title="Button to send the form" tabindex="26">Send</button>
 				</div>
 				<div class="parte6">
 					<p class="parrafoContacto" tabindex="28">You can also contact us through our corporate facebook, as well as through our email. Thank you for your visit and I hope to see you soon!</p>
 
 		            <div>
-		                <button title="Send an e-mail to the company" onclick="window.location.href = 'mailto:orientplus@gmail.com';" accesskey="c" class="boton2" tabindex="29">E-mail</button>
-		               	<button title="Facebook company's staff" onclick="window.location.href = 'https://www.facebook.com/Taller-OrientPlus-2079293448948890/';" class="boton2" tabindex="30">Facebook</button>
+		                <button title="Send an e-mail to the company" onclick="window.location.href = 'mailto:orientplus@gmail.com';" accesskey="m" class="boton2" tabindex="29">E-mail</button>
+		               	<button title="Facebook company's staff" accesskey="n" onclick="window.location.href = 'https://www.facebook.com/Taller-OrientPlus-2079293448948890/';" class="boton2" tabindex="30">Facebook</button>
 		            </div>
 				</div>
 			</div>
