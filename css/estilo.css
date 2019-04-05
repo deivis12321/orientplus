@@ -160,7 +160,7 @@ input {
 
 .boton {
 	position: relative;
-	left: 75px;
+	left: 177px;
 	width: 100px;
 	height: 30px;
 }
@@ -176,6 +176,14 @@ input {
 .boton3 {
 	width: 100px;
 	height: 25px;
+}
+
+.boton4 {
+	position: relative;
+	left: 153px;
+	bottom: 85px;
+	width: 100px;
+	height: 30px;
 }
 
 .parrafoContacto {
@@ -235,7 +243,7 @@ input {
 	padding: 0;
 	position: relative;
 	bottom: 6px;
-	left: 536px;
+	left: 525px;
 }
 
 .idiomaESP {
