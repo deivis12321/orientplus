@@ -14,13 +14,51 @@
 	var web = document.form1.idioma.options[document.form1.idioma.selectedIndex].value;
 	window.open(web, '_self', '');
 	}
+
+	function verificar(){
+		
+		if(document.form2.nombre.value && document.form2.email.value && document.form2.mensaje.value){
+			opcion = confirm('¿Está seguro que desea enviar los datos del formulario?');
+			condicion = false;
+			if(opcion == true){
+				correo = document.getElementById('email').value.split("");
+				for(var i=0; i < correo.length; i++){
+					if(correo[i] == "@"){
+						condicion = true
+					}
+				}
+				if(condicion == false){
+					document.getElementById('email').focus();
+					return alert('No ha agregado el e-mail correctamente. El formato es:\nprimeraparte@segundaparte.com');
+				} else if(condicion == true){
+					alert('Se han enviado el formulario correctamente.');
+					document.getElementById("form2").submit();
+				}
+			} else {
+				alert('No se han enviado el formulario, puede verificar la información.');
+				return false;
+			}
+		} else {
+			if(document.form2.nombre.value == false){
+				document.getElementById('nombre').focus();
+				return alert('No ha llenado todos los campos obligatorios.');
+			} else if(document.form2.email.value == false){
+				document.getElementById('email').focus();
+				return alert('No ha llenado todos los campos obligatorios.');
+			} else if(document.form2.mensaje.value == false){
+				document.getElementById('mensaje').focus();
+				return alert('No ha llenado todos los campos obligatorios.');
+			}
+
+		}
+	}
 	</script>
   </head>
   <body>
   	<header>    <!--Barra de menú que sirve como mapa del sitio, ya que las opciones llevan a los títulos que dicen-->
 		<nav class="listaMenu">
 			<ul>
-				<li><a href="#inicio" title="Ir a la sección principal" tabindex="1">Inicio</a></li>
+				<li><a href="#inicio" title="Ir a la sección principal" accesskey="i" tabindex="1">Inicio</a></li>
 				<li><a href="#servicios" title="Ir a la sección de servicios" tabindex="2">Servicios</a></li>
 				<li><a href="#comercial" title="Ir a la sección de comercial" tabindex="3">Comercial</a></li>
 				<li><a href="#contacto" title="Ir a la sección de contacto" tabindex="4">Contacto</a></li>
@@ -40,10 +78,10 @@
 				<li class="idiomaESP">
 					<p>Idioma:</p>
 					<form name="form1" class="form1" target="_self">
-						<select tabindex="7" title="Menú desplegable para seleccionar idioma" name="idioma" onChange="javascript:abreSitio()">
+						<select tabindex="7" accesskey="l" title="Menú desplegable idioma, presione enter para desplegar la lista y ubicar con las flechas arriba y abajo el idioma deseado." name="idioma" onChange="abreSitio()">
 							<option selected>--Elegir--</option>
-							<option value="index.html">Español</option>
-							<option value="index_ing.html">Inglés</option>
+							<option title="Presiona enter para elegir" value="index.html">Español</option>
+							<option title="Presiona enter para elegir" value="index_ing.html">Inglés</option>
 						</select>
 					</form>
 				</li>
@@ -51,12 +89,12 @@
 		</nav>
 	</header>
 	<section class="contenido wrapper">
-		<h1 id="inicio" accesskey="i" tabindex="8">Relojería Orient Plus</h1>
+		<h1 id="inicio" tabindex="8">Relojería Orient Plus</h1>
 		<img src="img/relojes.jpg" alt="Imagen de cuatro relojes" class="imagenPrincipal" tabindex="9" />
 		<p class="parrafoPrincipal" tabindex="10">Somos una empresa dedicada a la <strong>venta y reparación de relojes</strong>, con más de 30 años prestando el mejor servicio y la mejor calidad para que nuestros usuarios se sientan satisfechos y motivados a volver con nosotros. <em>Tenemos los técnicos más calificados</em> para que su reloj, que tanto adora, quedé funcionando como nuevo, y aún mejor, puede pedir una restauración para que quitarle un par de años a su reloj. <em>Estamos contentos de tenerlo en nuestro sitio web</em>, está un poco más cerca del mejor servicio de relojería de la costa caribe. Venga a nuestro establecimiento para tener el gusto de atenderlo, ¡estamos a su servicio, bienvenido!</p>
 		<hr />
 		<section class="centradoServicios">
-			<h2 id="servicios" accesskey="s" tabindex="11">Nuestros servicios</h2>
+			<h2 id="servicios" tabindex="11" >Nuestros servicios</h2>
 			<p class="parrafoPrincipal" tabindex="12">Los servicios que te ofrecemos son los siguientes:</p>
 			<div class="caja">
 				<div class="parte1">
@@ -100,7 +138,7 @@
 			<h2 id="comercial"  tabindex="17">Comercial</h2>
 			<div class="caja">
 				<div class="parte5" title="Orient Plus en Youtube">
-					<iframe  width="560" height="315" src="https://www.youtube.com/embed/KsLnO5QWqTE?start=3" style="margin-top: 20px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen tabindex="18"></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/KsLnO5QWqTE?start=3" style="margin-top: 20px;" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen tabindex="18"></iframe>
 				</div>
 				<div class="parte6">
 					<p class="parrafoContacto" tabindex="19" title="Lectura del video">"Usted ya nos conoce, en la relojería Orient, Esquina de la calle las flores, en la plaza principal, y ahora, Henry Cervantes, experto profesional en reparación de celulares y relojes, abre su nuevo centro de atención: Donde Henry. En la calle Ramón Herrera, sector plaza principal, con la más avanzada tecnología te ofrece: Reparación garantizada de celulares, accesorios, sim-card, equipos con tecnología de punta. Donde Henry: Verdaderos profesionales al servicio de tu equipo celular"</p>
@@ -109,29 +147,29 @@
 		</section>
 		<hr class="lineaMovida" />
 		<section class="centradoContacto">
-			<h2 id="contacto" accesskey="c" tabindex="20">¡Contáctanos!</h2>
+			<h2 id="contacto" tabindex="20">¡Contáctanos!</h2>
 			<div class="caja">
 				<div class="parte5">
-					<form>
+					<form name="form2" id="form2">
 						<p class="obligatorio" tabindex="21">Los campos <em>obligatorios</em> en el formulario acontinuación están marcados con <strong>(*)</strong>:</p>
 						<label for="nombre">Nombre (*): </label><br />
-						<input type="text" id="nombre" accesskey="n" tabindex="22" required /><br />
+						<input type="text" id="nombre" name="nombre" accesskey="q" tabindex="22" required placeholder="Fulanito de Tal" /><br />
 						<label for="email">Email (*): </label><br />
-						<input type="email" id="email" accesskey="e" required  tabindex="23" /><br />
+						<input type="email" id="email" name="email" accesskey="w" required  tabindex="23" placeholder="micorreo@correo.com" /><br />
 						<label for="telefono">Teléfono: </label><br />
-						<input type="text" id="telefono" accesskey="t" tabindex="24" /><br />
+						<input type="text" id="telefono" name="telefono" accesskey="a" tabindex="24" placeholder="+57 311 111 1111" /><br />
 						<label for="mensaje">Mensaje (*):</label><br /><br />
-						<textarea id="mensaje" tabindex="25" accesskey="m" required=""></textarea>
-						<input type="submit"  class="boton" value="Enviar" title="Botón para enviar el formulario" tabindex="26" />
-						<input type="reset" class="boton" value="Reset" title="Botón para resetear la información del formulario" tabindex="27" />
+						<textarea id="mensaje" tabindex="25" name="mensaje" accesskey="s" required placeholder="Ingrese en mensaje aquí..."></textarea>
+						<input type="reset" class="boton" value="Reset" accesskey="x" title="Botón para resetear la información del formulario" tabindex="27" />
 					</form>
+					<button class="boton4" onclick="verificar();" accesskey="z" title="Botón para enviar el formulario" tabindex="26">Enviar</button>
 				</div>
 				<div class="parte6">
 					<p class="parrafoContacto" tabindex="28">También puedes ponerte en contacto con nosotros através de nuestro facebook corporativo, así como por nuestro correo electrónico. ¡Gracias por tu visita y espero verte pronto!</p>
 
 		            <div>
-		                <button title="Mandar un e-mail a la empresa" onclick="window.location.href = 'mailto:orientplus@gmail.com';" accesskey="c" class="boton2" tabindex="29">Correo electrónico</button>
-		               	<button title="Facebook personal de la empresa" onclick="window.location.href = 'https://www.facebook.com/Taller-OrientPlus-2079293448948890/';" class="boton2" tabindex="30">Facebook</button>
+		                <button title="Mandar un e-mail a la empresa" onclick="window.location.href = 'mailto:orientplus@gmail.com';" accesskey="m" class="boton2" tabindex="29">Correo electrónico</button>
+		               	<button title="Facebook personal de la empresa" accesskey="n" onclick="window.location.href = 'https://www.facebook.com/Taller-OrientPlus-2079293448948890/';" class="boton2" tabindex="30">Facebook</button>
 		            </div>
 				</div>
 			</div>
